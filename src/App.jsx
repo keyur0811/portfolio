@@ -6,12 +6,10 @@ import Projects from './components/Projects.jsx'
 import Experience from './components/Experience.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
-import GoogleAnalyticsTracker from "./components/GoogleAnalyticsTracker";
 
 export default function App() {
   return (
     <>
-      <GoogleAnalyticsTracker />
       <Navbar />
       <main>
         <Hero />
