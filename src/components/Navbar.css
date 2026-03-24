@@ -1,0 +1,118 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+.navbar.scrolled {
+  padding: 12px 0;
+  background: rgba(10, 12, 16, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--mono);
+  color: var(--accent);
+}
+.nav-logo-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-2);
+  border-radius: 50%;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+.nav-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 14px;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--text-2);
+  transition: color 0.2s;
+  border-radius: var(--radius);
+}
+.nav-link:hover { color: var(--text); }
+.nav-link-num {
+  color: var(--accent);
+  font-size: 11px;
+  margin-right: 4px;
+}
+.nav-resume {
+  font-size: 13px;
+  padding: 7px 16px;
+  margin-left: 8px;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 12px 24px 20px;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.mobile-menu.open { max-height: 400px; }
+.mobile-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 16px;
+  color: var(--text-2);
+  padding: 8px 0;
+  width: 100%;
+  text-align: left;
+}
+.mobile-link:hover { color: var(--text); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: flex; }
+}

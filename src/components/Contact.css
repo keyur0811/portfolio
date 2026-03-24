@@ -1,0 +1,88 @@
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.contact-intro {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.contact-details { display: flex; flex-direction: column; gap: 12px; }
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  transition: all 0.2s;
+}
+.contact-item:hover:not(.contact-item-static) {
+  border-color: var(--border-h);
+  transform: translateX(4px);
+}
+.contact-item-static { cursor: default; }
+.contact-item-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99,179,237,0.08);
+  border: 1px solid rgba(99,179,237,0.15);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: var(--mono);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.contact-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.contact-item-label {
+  font-size: 10px;
+  color: var(--text-3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.contact-item-value { font-size: 14px; color: var(--text); }
+
+/* CTA card */
+.contact-cta {
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+}
+.cta-glow {
+  position: absolute;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(99,179,237,0.12) 0%, transparent 70%);
+  top: -40px; right: -40px;
+  pointer-events: none;
+}
+.cta-label { font-size: 12px; margin-bottom: 12px; }
+.cta-heading {
+  font-size: 26px;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+.cta-body {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.cta-btn { width: 100%; justify-content: center; }
+
+@media (max-width: 768px) {
+  .contact-layout { grid-template-columns: 1fr; }
+}
